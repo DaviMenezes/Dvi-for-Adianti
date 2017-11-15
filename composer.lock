@@ -4,25 +4,29 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0d194e312591083170753bb0813247d3",
-    "content-hash": "3707f5d5d3982048459a8dd0ce521576",
+    "hash": "c35f58c22f1596cb0a63fe046b063105",
+    "content-hash": "9aa5f1878f5ea227982cc6aaf11f0912",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
-            "version": "1.0.1",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Bacon/BaconQrCode.git",
-                "reference": "031a2ce68c5794064b49d11775b2daf45c96e21c"
+                "reference": "5a91b62b9d37cee635bbf8d553f4546057250bee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Bacon/BaconQrCode/zipball/031a2ce68c5794064b49d11775b2daf45c96e21c",
-                "reference": "031a2ce68c5794064b49d11775b2daf45c96e21c",
+                "url": "https://api.github.com/repos/Bacon/BaconQrCode/zipball/5a91b62b9d37cee635bbf8d553f4546057250bee",
+                "reference": "5a91b62b9d37cee635bbf8d553f4546057250bee",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "ext-iconv": "*",
+                "php": "^5.4|^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8"
             },
             "suggest": {
                 "ext-gd": "to generate QR code images"
@@ -47,7 +51,40 @@
             ],
             "description": "BaconQrCode is a QR code generator for PHP.",
             "homepage": "https://github.com/Bacon/BaconQrCode",
-            "time": "2016-01-09 22:55:35"
+            "time": "2017-10-17 09:59:25"
+        },
+        {
+            "name": "davimenezes/adianti_components",
+            "version": "1.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DaviMenezes/adianti_components.git",
+                "reference": "bb035b54bf6aa23d3ffb2f9fa239b85a15ae649d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DaviMenezes/adianti_components/zipball/bb035b54bf6aa23d3ffb2f9fa239b85a15ae649d",
+                "reference": "bb035b54bf6aa23d3ffb2f9fa239b85a15ae649d",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dvi\\": "/"
+                },
+                "classmap": [
+                    "/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Davi Menezes",
+                    "email": "davimenezes.dev@gmail.com"
+                }
+            ],
+            "description": "Components for Adianti Framework",
+            "time": "2017-11-04 04:03:02"
         },
         {
             "name": "dompdf/dompdf",
