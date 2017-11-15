@@ -1,0 +1,4 @@
+/lib
+/vendor
+
+app/database/log\.db
