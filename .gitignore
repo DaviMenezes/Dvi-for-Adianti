@@ -12,3 +12,9 @@ vendor/davimenezes/
 vendor/dompdf/dompdf/
 
 vendor/phpmailer/phpmailer/
+
+vendor/composer/
+
+composer\.json
+
+composer\.lock
