@@ -17,7 +17,7 @@ use Adianti\Registry\TSession;
  */
 class SystemChangeLog extends TRecord
 {
-    const TABLENAME    = 'sys_change_log';
+    const TABLENAME    = 'system_change_log';
     const PRIMARYKEY   = 'id';
     const IDPOLICY     = 'max'; // {max, serial}
     
