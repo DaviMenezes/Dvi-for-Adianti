@@ -21,10 +21,5 @@
             "vendor/dvi",
             "vendor/adianti"
         ]
-    },
-    "extra": {
-        "installer-paths": {
-            "vendor/dvi": ["davimenezes/adianti_components"]
-        }
     }
 }
