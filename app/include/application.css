@@ -1,0 +1,133 @@
+:root {
+     --width100perc: 100%;
+     --min-height-default: 36px;
+ }
+@media only screen and (min-width: 320px){
+
+    .without_padding_right { padding-right: 0px; }
+
+}
+
+@media only screen and (min-width: 768px){
+    .dvi .form-horizontal .control-label {
+        text-align: right;
+        height: 26px !important;
+        margin-bottom: 0px;
+        width: 100%;
+    }
+    .form-horizontal .tiny_class {
+        line-height: 18px;
+        height: 26px !important;
+    }
+    .without_padding_left input[type="text"]{
+        width: 100%;
+    }
+    .without_padding_left{ padding-left: 0px; }
+
+}
+@media only screen and (min-width: 992px){
+    .dvi .form-horizontal  .control-label {
+        padding-top: 7px !important;
+        line-height: 18px;
+        text-align: right;
+        margin-bottom: 0px;
+        width: 100%;
+    }
+
+}
+
+.width100perc { width: 100%; }
+.width120 { min-width: 120px; }
+
+/*.dvi .tseekbutton .tfield .select2-container .select2-choice .dvi_btn,button { min-height: 36px !important; }
+.dvi .select2-container .select2-choice { min-height: 36px !important; }*/
+.dvi .tseekbutton, .dvi .tseekentry, .dvi .select2-container, .dvi .select2-choice
+{
+    min-height: var(--min-height-default) !important;
+    width: var(--width100perc);
+}
+.dvi .dvi_btn {
+    min-height: var(--min-height-default);
+}
+.dvi .label_right{ width: 100%; text-align: right; }
+.dvi_btn i {
+    padding-right: 0px !important;
+    margin-top: 0.5px !important;
+}
+.dvi .tdate-group {
+    width: 100%;
+}
+.dvi .tdate-group-addon i {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 7px 8px;
+    line-height: normal;
+    width: 16px !important;
+}
+.dvi .btn_label {
+    float: right;
+    margin: 3px 4px;
+    font-weight: 700;
+}
+.dvi .dvi_radio_info .btn-group .active {
+    color: #fff;
+    background-color: #31b0d5;
+    border-color: #269abc;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    /*width: 70%;*/
+}
+.dvi select, .dvi .select2, .dvi input[type="text"], .dvi input[type="password"], .dvi input[type="datetime"], .dvi input[type="datetime-local"], .dvi input[type="date"], .dvi input[type="month"], .dvi input[type="time"], .dvi input[type="week"], .dvi input[type="number"], .dvi input[type="email"], .dvi input[type="url"], .dvi input[type="search"], .dvi input[type="tel"], .dvi input[type="color"], .dvi .uneditable-input, .dvi .ui-spinner  {
+    height: 36px !important;
+    width: 100% !important;
+}
+.dvi textarea {
+    width: 100% !important;
+}
+.note-editor, .panel {
+    margin-bottom: 0px;
+}
+
+.dvi .tseek-group .tseekentry {
+    width: 80%
+}
+.dvi .tseek-group .tseekbutton {
+    width:20%
+}
+
+.dvi label {
+    margin: 5px 0px;
+}
+
+.dvi .tab-pane {
+    padding: 10px 2px;
+}
+
+.dvi .dvi_panel_action {
+    height: 39px;
+}
+.dvi .dvi_btn_label {
+    float: right; margin: 4px 0 0 4px
+}
+
+table.dataTable.no-footer {
+    border-bottom: 1px solid #ccc;
+}
+
+.dvi .dvi_btn .btn:not(.btn-link):not(.btn-circle) i {
+    font-size: 2em !important;
+}
+
+table.tdatagrid_table>tbody.tdatagrid_body>tr>td.tdatagrid_cell.action {
+    vertical-align: middle;
+    padding: 2px 3px;
+}
+
+table.tdatagrid_table>tbody.tdatagrid_body>tr>td.tdatagrid_cell.action button.btn {
+    height: 22px;
+}

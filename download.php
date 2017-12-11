@@ -1,9 +1,11 @@
 <?php
+
+use Adianti\Registry\TSession;
+
 require_once 'init.php';
 new TSession;
 
-if (isset($_GET['file']) AND TSession::getValue('logged') )
-{
+if (isset($_GET['file']) and TSession::getValue('logged')) {
     $file      = $_GET['file'];
     $info      = pathinfo($file);
     $extension = $info['extension'];
@@ -23,6 +25,7 @@ if (isset($_GET['file']) AND TSession::getValue('logged') )
     $content_type_list['odt']  = 'application/vnd.oasis.opendocument.text';
     $content_type_list['ods']  = 'application/vnd.oasis.opendocument.spreadsheet';
     $content_type_list['jpg']  = 'image/jpeg';
+    $content_type_list['jpg']  = 'image/jpg';
     $content_type_list['png']  = 'image/png';
     $content_type_list['gif']  = 'image/gif';
     $content_type_list['svg']  = 'image/svg+xml';
@@ -33,15 +36,14 @@ if (isset($_GET['file']) AND TSession::getValue('logged') )
     $content_type_list['bz2']  = 'application/x-bzip2';
     $content_type_list['tar']  = 'application/x-tar';
     
-    if (in_array(strtolower($extension), array_keys($content_type_list)))
-    {
+    if (in_array(strtolower($extension), array_keys($content_type_list))) {
         $basename = basename($file);
         $filesize = filesize($file); // get the filesize
         
         header("Pragma: public");
         header("Expires: 0"); // set expiration time
         header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
-        header("Content-type: " . $content_type_list[$extension] );
+        header("Content-type: " . $content_type_list[$extension]);
         header("Content-Length: {$filesize}");
         header("Content-disposition: inline; filename=\"{$basename}\"");
         header("Content-Transfer-Encoding: binary");

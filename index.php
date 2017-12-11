@@ -1,24 +1,33 @@
 <?php
+
+use Adianti\App\Lib\Menu\AdiantiMenuBuilder;
+use Adianti\App\Lib\Util\ApplicationTranslator;
+use Adianti\Control\TPage;
+use Adianti\Core\AdiantiCoreApplication;
+use Adianti\Registry\TSession;
+
+function dd($var)
+{
+    var_dump($var);
+    die();
+}
+
 require_once 'init.php';
 $theme  = $ini['general']['theme'];
 $class  = isset($_REQUEST['class']) ? $_REQUEST['class'] : '';
 $public = in_array($class, $ini['permission']['public_classes']);
 new TSession;
 
-if ( TSession::getValue('logged') )
-{
+if (TSession::getValue('logged')) {
     $content     = file_get_contents("app/templates/{$theme}/layout.html");
     $menu_string = AdiantiMenuBuilder::parse('menu.xml', $theme);
     $content     = str_replace('{MENU}', $menu_string, $content);
     
-    if ((TSession::getValue('login') == 'admin') && isset($ini['general']['token']))
-    {
+    if ((TSession::getValue('login') == 'admin') && isset($ini['general']['token'])) {
         $content = str_replace('{IF-BUILDER}', '', $content);
-        $content = str_replace('{/IF-BUILDER}','', $content);
+        $content = str_replace('{/IF-BUILDER}', '', $content);
     }
-}
-else
-{
+} else {
     $content = file_get_contents("app/templates/{$theme}/login.html");
 }
 
@@ -39,15 +48,11 @@ $content  = str_replace('{HEAD}', $css.$js, $content);
 
 echo $content;
 
-if (TSession::getValue('logged') OR $public)
-{
-    if ($class)
-    {
-        $method = isset($_REQUEST['method']) ? $_REQUEST['method'] : NULL;
+if (TSession::getValue('logged') or $public) {
+    if ($class) {
+        $method = isset($_REQUEST['method']) ? $_REQUEST['method'] : null;
         AdiantiCoreApplication::loadPage($class, $method, $_REQUEST);
     }
-}
-else
-{
+} else {
     AdiantiCoreApplication::loadPage('LoginForm', '', $_REQUEST);
 }
