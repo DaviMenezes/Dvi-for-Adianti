@@ -1,4 +1,6 @@
 <?php
+namespace Adianti\App\Lib\Validator;
+
 /**
  * Date validation
  *

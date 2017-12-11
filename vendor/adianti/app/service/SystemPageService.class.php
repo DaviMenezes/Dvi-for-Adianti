@@ -1,4 +1,6 @@
 <?php
+namespace Adianti\App\Service;
+
 class SystemPageService
 {
     /**

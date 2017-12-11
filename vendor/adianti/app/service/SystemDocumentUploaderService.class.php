@@ -1,4 +1,8 @@
 <?php
+namespace Adianti\App\Service;
+
+use finfo;
+
 /**
  * Document uploader listener
  *
@@ -11,7 +15,7 @@
  */
 class SystemDocumentUploaderService
 {
-    function show()
+    public function show()
     {
         $content_type_list = array();
         $content_type_list['txt']  = 'text/plain';
@@ -28,20 +32,19 @@ class SystemDocumentUploaderService
         $content_type_list['pptx'] = 'application/vnd.openxmlformats-officedocument.presentationml.presentation';
         $content_type_list['odt']  = 'application/vnd.oasis.opendocument.text';
         $content_type_list['ods']  = 'application/vnd.oasis.opendocument.spreadsheet';
-        
+        $content_type_list['png']  = 'image/png';
+        $content_type_list['jpg']  = 'image/jpg';
+
         $folder = 'tmp/';
         $response = array();
-        if (isset($_FILES['fileName']))
-        {
+        if (isset($_FILES['fileName'])) {
             $file = $_FILES['fileName'];
-            if( $file['error'] === 0 && $file['size'] > 0 )
-            {
+            if ($file['error'] === 0 && $file['size'] > 0) {
                 $path = $folder.$file['name'];
                 
                 // check file extension
                 $finfo = new finfo(FILEINFO_MIME_TYPE);
-                if (!in_array($finfo->file($file['tmp_name']), array_values($content_type_list)))
-                {
+                if (!in_array($finfo->file($file['tmp_name']), array_values($content_type_list))) {
                     $response = array();
                     $response['type'] = 'error';
                     $response['msg'] = "Extension not allowed";
@@ -49,21 +52,15 @@ class SystemDocumentUploaderService
                     return;
                 }
                 
-                if (is_writable($folder) )
-                {
-                    if( move_uploaded_file( $file['tmp_name'], $path ) )
-                    {
+                if (is_writable($folder)) {
+                    if (move_uploaded_file($file['tmp_name'], $path)) {
                         $response['type'] = 'success';
                         $response['fileName'] = $file['name'];
-                    }
-                    else
-                    {
+                    } else {
                         $response['type'] = 'error';
                         $response['msg'] = '';
                     }
-                }
-                else
-                {
+                } else {
                     $response['type'] = 'error';
                     $response['msg'] = "Permission denied: {$path}";
                 }

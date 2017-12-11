@@ -1,4 +1,6 @@
 <?php
+namespace Adianti\App\Lib\Widget;
+
 /**
  * TAccordion Container
  * Copyright (c) 2006-2010 Pablo Dall'Oglio

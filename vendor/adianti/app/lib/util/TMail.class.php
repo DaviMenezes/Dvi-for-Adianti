@@ -1,4 +1,6 @@
 <?php
+namespace Adianti\App\Lib\Util;
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 

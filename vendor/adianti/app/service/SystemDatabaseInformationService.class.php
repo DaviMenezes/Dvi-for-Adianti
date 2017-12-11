@@ -1,6 +1,8 @@
 <?php
+namespace Adianti\App\Service;
 
 use Adianti\Database\TConnection;
+use Adianti\Database\TTransaction;
 
 /**
  * Database Information Service
