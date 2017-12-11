@@ -3,6 +3,7 @@ namespace Adianti\Modules\Admin\Control;
 
 use Adianti\Control\TAction;
 use Adianti\Control\TPage;
+use Adianti\Core\AdiantiCoreTranslator;
 use Adianti\Database\TTransaction;
 use Adianti\Modules\Admin\Model\SystemGroup;
 use Adianti\Modules\Admin\Model\SystemProgram;
@@ -245,7 +246,7 @@ class SystemUserForm extends TPage
             TTransaction::close();
             
             // shows the success message
-            new TMessage('info', TAdiantiCoreTranslator::translate('Record saved'));
+            new TMessage('info', AdiantiCoreTranslator::translate('Record saved'));
         } catch (Exception $e) { // in case of exception
             // shows the exception error message
             new TMessage('error', $e->getMessage());
