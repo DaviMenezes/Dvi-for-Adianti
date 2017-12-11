@@ -1,17 +1,10 @@
 /lib
 
+\.idea/
 
 app/database/log\.db
 
-\.idea/
-
 app/database/permission\.db
-
-vendor/davimenezes/
-
-vendor/dompdf/dompdf/
-
-vendor/phpmailer/phpmailer/
 
 vendor/composer/
 
