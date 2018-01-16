@@ -9,3 +9,21 @@ app/database/permission\.db
 vendor/composer/
 
 composer\.lock
+
+vendor/bacon/
+
+vendor/davimenezes/
+
+vendor/dompdf/
+
+vendor/phenx/
+
+vendor/phpmailer/
+
+vendor/phprtflite/
+
+vendor/picqer/
+
+vendor/sabberworm/
+
+vendor/tburry/
