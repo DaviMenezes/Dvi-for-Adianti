@@ -3,6 +3,7 @@ namespace Adianti\Modules\Common\Control;
 
 use Adianti\Control\TAction;
 use Adianti\Control\TPage;
+use Adianti\Core\TApplication;
 use Adianti\Database\TTransaction;
 use Adianti\Modules\Admin\Model\SystemUser;
 use Adianti\Registry\TSession;
