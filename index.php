@@ -5,6 +5,7 @@ use Adianti\App\Lib\Util\ApplicationTranslator;
 use Adianti\Control\TPage;
 use Adianti\Core\AdiantiCoreApplication;
 use Adianti\Registry\TSession;
+use App\Init;
 
 function dd($var)
 {
@@ -13,6 +14,9 @@ function dd($var)
 }
 
 require_once 'init.php';
+$init = new Init();
+$ini = $init->getIni();
+
 $theme  = $ini['general']['theme'];
 $class  = isset($_REQUEST['class']) ? $_REQUEST['class'] : '';
 $public = in_array($class, $ini['permission']['public_classes']);
