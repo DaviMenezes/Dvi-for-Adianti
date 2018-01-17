@@ -1,14 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: davi
- * Date: 16/01/18
- * Time: 19:18
- */
-
 namespace Adianti\Core;
 
 use Adianti\Registry\TSession;
+use Adianti\Widget\Dialog\TMessage;
 
 class TApplication extends AdiantiCoreApplication
 {

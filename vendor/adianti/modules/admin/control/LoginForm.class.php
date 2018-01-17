@@ -7,6 +7,7 @@ use Adianti\Control\TPage;
 use Adianti\Core\AdiantiApplicationConfig;
 use Adianti\Core\AdiantiCoreApplication;
 use Adianti\Core\AdiantiCoreTranslator;
+use Adianti\Core\TApplication;
 use Adianti\Database\TTransaction;
 use Adianti\Modules\Admin\Model\SystemUser;
 use Adianti\Modules\Log\Model\SystemAccessLog;
@@ -18,7 +19,7 @@ use Adianti\Widget\Form\TEntry;
 use Adianti\Widget\Form\TPassword;
 use Adianti\Wrapper\BootstrapFormBuilder;
 use Exception;
-use TApplication;
+
 
 /**
  * LoginForm
