@@ -22,10 +22,15 @@ class Modules
         $files = array();
         foreach ($modules as $project => $module) {
             foreach ($module as $module_folder) {
-                $files[] = new RecursiveIteratorIterator(
-                    new RecursiveDirectoryIterator('vendor/'.$project.'/'.$module_folder.'/control'),
-                    RecursiveIteratorIterator::CHILD_FIRST
-                );
+                $directory = 'vendor/' . $project . '/' . $module_folder . '/control';
+                if (is_dir($directory)) {
+                    $recursiveDirectoryIterator = new RecursiveDirectoryIterator($directory);
+                    $recursiveIteratorIterator = new RecursiveIteratorIterator(
+                        $recursiveDirectoryIterator,
+                        RecursiveIteratorIterator::CHILD_FIRST
+                    );
+                    $files[] = $recursiveIteratorIterator;
+                }
             }
         }
 
