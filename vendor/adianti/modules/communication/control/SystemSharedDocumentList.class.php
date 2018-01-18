@@ -252,8 +252,8 @@ class SystemSharedDocumentList extends TPage
             $userid = TSession::getValue('userid');
             $usergroups = implode(',', TSession::getValue('usergroupids'));
             $shared_criteria = new TCriteria;
-            $shared_criteria->add(new TFilter('id', 'IN', "(SELECT document_id FROM system_document_user WHERE system_user_id='$userid')"), TExpression::OR_OPERATOR);
-            $shared_criteria->add(new TFilter('id', 'IN', "(SELECT document_id FROM system_document_group WHERE system_group_id IN ($usergroups))"), TExpression::OR_OPERATOR);
+            $shared_criteria->add(new TFilter('id', 'IN', "(SELECT document_id FROM sys_document_user WHERE system_user_id='$userid')"), TExpression::OR_OPERATOR);
+            $shared_criteria->add(new TFilter('id', 'IN', "(SELECT document_id FROM sys_document_group WHERE system_group_id IN ($usergroups))"), TExpression::OR_OPERATOR);
             $criteria->add($shared_criteria);
             
             
