@@ -111,4 +111,14 @@
               </menuitem>
         </menu>
     </menuitem>
+
+    <menuitem label="Formulários">
+        <icon>fa:bars fa-fw</icon>
+        <menu>
+            <menuitem label="Form1">
+                <action>HumanForm</action>
+                <icon>fa:bars fa-fw</icon>
+            </menuitem>
+        </menu>
+    </menuitem>
 </menu>

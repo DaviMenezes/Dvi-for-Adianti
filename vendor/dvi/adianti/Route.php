@@ -47,6 +47,7 @@ use Adianti\Modules\Log\Model\SystemAccessLog;
 use Adianti\Service\AdiantiMultiSearchService;
 use Adianti\Widget\Dialog\TMessage;
 use Dvi\Module\Contact\Control\ContactAddressForm;
+use Dvi\Module\Contact\Control\HumanForm;
 use Dvi\Module\Office\Project\Control\ProjectFormList;
 use Dvi\Module\Office\Project\Control\ProjectPostForm;
 use Dvi\Module\Office\Project\Control\ProjectPostList;
@@ -153,6 +154,7 @@ class Route
         $routes['UrlFormList'] = UrlFormList::class;
         $routes['UrlForm'] = UrlForm::class;
 
+        $routes['HumanForm'] = HumanForm::class;
         return $routes;
     }
 

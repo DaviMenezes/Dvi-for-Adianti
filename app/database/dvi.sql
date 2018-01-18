@@ -2,7 +2,7 @@
 -- Servidor:                     127.0.0.1
 -- Versão do servidor:           5.7.20-0ubuntu0.17.04.1 - (Ubuntu)
 -- OS do Servidor:               Linux
--- HeidiSQL Versão:              9.4.0.5191
+-- HeidiSQL Versão:              9.5.0.5196
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -11,23 +11,39 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- Copiando estrutura para tabela dvi.stk_user
-DROP TABLE IF EXISTS `stk_user`;
-CREATE TABLE IF NOT EXISTS `stk_user` (
+-- Copiando estrutura para tabela dvi.ctt_entity
+DROP TABLE IF EXISTS `ctt_entity`;
+CREATE TABLE IF NOT EXISTS `ctt_entity` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `type` enum('dealer','provider') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'dealer',
+  `name` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='usuarios';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Copiando dados para a tabela dvi.stk_user: ~3 rows (aproximadamente)
-/*!40000 ALTER TABLE `stk_user` DISABLE KEYS */;
-INSERT INTO `stk_user` (`id`, `name`, `password`, `type`) VALUES
-	(1, 'Luciane Menezes', '123', 'provider'),
-	(2, 'Davi Menezes', '123', 'dealer'),
-	(3, 'Nelson', '123', 'dealer');
-/*!40000 ALTER TABLE `stk_user` ENABLE KEYS */;
+-- Copiando dados para a tabela dvi.ctt_entity: ~1 rows (aproximadamente)
+/*!40000 ALTER TABLE `ctt_entity` DISABLE KEYS */;
+INSERT INTO `ctt_entity` (`id`, `name`) VALUES
+	(1, 'Davi Menezess');
+/*!40000 ALTER TABLE `ctt_entity` ENABLE KEYS */;
+
+-- Copiando estrutura para tabela dvi.ctt_entity_human
+DROP TABLE IF EXISTS `ctt_entity_human`;
+CREATE TABLE IF NOT EXISTS `ctt_entity_human` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `cpf` varchar(14) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rg` varchar(12) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `birthday` date DEFAULT NULL,
+  `entity_id` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `cpf` (`cpf`),
+  KEY `FK_ctt_entity_human_ctt_entity` (`entity_id`),
+  CONSTRAINT `FK_ctt_entity_human_ctt_entity` FOREIGN KEY (`entity_id`) REFERENCES `ctt_entity` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Copiando dados para a tabela dvi.ctt_entity_human: ~1 rows (aproximadamente)
+/*!40000 ALTER TABLE `ctt_entity_human` DISABLE KEYS */;
+INSERT INTO `ctt_entity_human` (`id`, `cpf`, `rg`, `birthday`, `entity_id`) VALUES
+	(1, '572.153.298-01', NULL, '2018-01-17', 1);
+/*!40000 ALTER TABLE `ctt_entity_human` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela dvi.sys_document
 DROP TABLE IF EXISTS `sys_document`;
@@ -59,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `sys_document_category` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela dvi.sys_document_category: ~1 rows (aproximadamente)
+-- Copiando dados para a tabela dvi.sys_document_category: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `sys_document_category` DISABLE KEYS */;
 INSERT INTO `sys_document_category` (`id`, `name`) VALUES
 	(1, 'Documentação');
@@ -125,9 +141,9 @@ CREATE TABLE IF NOT EXISTS `sys_group_program` (
   KEY `FK_sys_group_program_sys_program` (`system_program_id`),
   CONSTRAINT `FK_sys_group_program_sys_group` FOREIGN KEY (`system_group_id`) REFERENCES `sys_group` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_sys_group_program_sys_program` FOREIGN KEY (`system_program_id`) REFERENCES `sys_program` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela dvi.sys_group_program: ~33 rows (aproximadamente)
+-- Copiando dados para a tabela dvi.sys_group_program: ~34 rows (aproximadamente)
 /*!40000 ALTER TABLE `sys_group_program` DISABLE KEYS */;
 INSERT INTO `sys_group_program` (`id`, `system_group_id`, `system_program_id`) VALUES
 	(1, 1, 1),
@@ -162,7 +178,8 @@ INSERT INTO `sys_group_program` (`id`, `system_group_id`, `system_program_id`) V
 	(43, 2, 23),
 	(44, 2, 24),
 	(45, 2, 25),
-	(46, 2, 30);
+	(46, 2, 30),
+	(47, 2, 35);
 /*!40000 ALTER TABLE `sys_group_program` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela dvi.sys_message
@@ -228,7 +245,7 @@ CREATE TABLE IF NOT EXISTS `sys_program` (
   `name` varchar(100) DEFAULT NULL,
   `controller` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
 
 -- Copiando dados para a tabela dvi.sys_program: ~34 rows (aproximadamente)
 /*!40000 ALTER TABLE `sys_program` DISABLE KEYS */;
@@ -266,7 +283,8 @@ INSERT INTO `sys_program` (`id`, `name`, `controller`) VALUES
 	(31, 'System PHP Error', 'SystemPHPErrorLogView'),
 	(32, 'System Database Browser', 'SystemDatabaseExplorer'),
 	(33, 'System Table List', 'SystemTableList'),
-	(34, 'System Data Browser', 'SystemDataBrowser');
+	(34, 'System Data Browser', 'SystemDataBrowser'),
+	(35, 'Cadastro de Contato', 'HumanForm');
 /*!40000 ALTER TABLE `sys_program` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela dvi.sys_unit
@@ -340,7 +358,7 @@ CREATE TABLE IF NOT EXISTS `sys_user_program` (
   CONSTRAINT `FK_sys_user_program_sys_user` FOREIGN KEY (`system_user_id`) REFERENCES `sys_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela dvi.sys_user_program: ~1 rows (aproximadamente)
+-- Copiando dados para a tabela dvi.sys_user_program: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `sys_user_program` DISABLE KEYS */;
 INSERT INTO `sys_user_program` (`id`, `system_user_id`, `system_program_id`) VALUES
 	(1, 2, 7);
