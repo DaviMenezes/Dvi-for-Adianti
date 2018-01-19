@@ -1,7 +1,5 @@
 \.idea/
 
-app/database/log\.db
-
 app/database/permission\.db
 
 vendor/composer/
