@@ -9,9 +9,7 @@ class Modules
     public static function getModules()
     {
         return [
-            'adianti/modules'=> ['admin', 'available', 'common', 'log'],
-            'davimenezes/adianti_erp_modules/src'=> ['contact'],
-            'davimenezes/adianti_erp_modules/src/office' => ['project', 'tag', 'task', 'url', 'workspace']
+            'adianti/modules'=> ['admin', 'available', 'common', 'log']
         ];
     }
     

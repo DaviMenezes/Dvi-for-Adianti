@@ -46,7 +46,6 @@ use Adianti\Modules\Log\Control\SystemSqlLogList;
 use Adianti\Modules\Log\Model\SystemAccessLog;
 use Adianti\Service\AdiantiMultiSearchService;
 use Adianti\Widget\Dialog\TMessage;
-use Davix\Contato\Control\ContatoUser;
 use Dvi\Module\Contact\Control\ContactAddressForm;
 use Dvi\Module\Contact\Control\HumanForm;
 use Dvi\Module\Office\Project\Control\ProjectFormList;
