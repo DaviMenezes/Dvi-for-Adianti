@@ -142,6 +142,4 @@ class Route
 
         return $routes;
     }
-
-
 }
