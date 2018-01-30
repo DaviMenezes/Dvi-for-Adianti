@@ -46,6 +46,7 @@ use Adianti\Modules\Log\Control\SystemSqlLogList;
 use Adianti\Modules\Log\Model\SystemAccessLog;
 use Adianti\Service\AdiantiMultiSearchService;
 use Adianti\Widget\Dialog\TMessage;
+use Davix\Contato\Control\ContatoUser;
 use Dvi\Module\Contact\Control\ContactAddressForm;
 use Dvi\Module\Contact\Control\HumanForm;
 use Dvi\Module\Office\Project\Control\ProjectFormList;
@@ -139,22 +140,6 @@ class Route
         $routes['SystemDocumentUploaderService'] = SystemDocumentUploaderService::class;
         $routes['AdiantiMultiSearchService'] = AdiantiMultiSearchService::class;
 
-        $routes['ContactAddressForm'] = ContactAddressForm::class;
-
-        $routes['WorkspaceFormList'] = WorkspaceFormList::class;
-
-        $routes['ProjectPostForm'] = ProjectPostForm::class;
-        $routes['ProjectFormList'] = ProjectFormList::class;
-        $routes['ProjectPostList'] = ProjectPostList::class;
-
-        $routes['TaskList'] = TaskList::class;
-        $routes['TaskForm'] = TaskForm::class;
-        $routes['TaskWorkForm'] = TaskWorkForm::class;
-
-        $routes['UrlFormList'] = UrlFormList::class;
-        $routes['UrlForm'] = UrlForm::class;
-
-        $routes['HumanForm'] = HumanForm::class;
         return $routes;
     }
 
