@@ -27,6 +27,7 @@ use Adianti\Modules\Admin\Control\SystemUnitForm;
 use Adianti\Modules\Admin\Control\SystemUnitList;
 use Adianti\Modules\Admin\Control\SystemUserForm;
 use Adianti\Modules\Admin\Control\SystemUserList;
+use Adianti\Modules\Available\Control\PublicView;
 use Adianti\Modules\Common\Control\MessageList;
 use Adianti\Modules\Common\Control\NotificationList;
 use Adianti\Modules\Common\Control\SearchBox;
@@ -138,7 +139,8 @@ class Route
         $routes['SystemMessageForm'] = SystemMessageForm::class;
         $routes['SystemDocumentUploaderService'] = SystemDocumentUploaderService::class;
         $routes['AdiantiMultiSearchService'] = AdiantiMultiSearchService::class;
-
+        $routes['PublicView'] = PublicView::class;
+        
         return $routes;
     }
 }
