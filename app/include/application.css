@@ -54,6 +54,9 @@
     padding-right: 0px !important;
     margin-top: 0.5px !important;
 }
+.btn:not(.btn-link):not(.btn-circle) i {
+    font-size: 2em !important;
+}
 .dvi .tdate-group {
     width: 100%;
 }
