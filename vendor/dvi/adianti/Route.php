@@ -140,7 +140,7 @@ class Route
         $routes['SystemDocumentUploaderService'] = SystemDocumentUploaderService::class;
         $routes['AdiantiMultiSearchService'] = AdiantiMultiSearchService::class;
         $routes['PublicView'] = PublicView::class;
-        
+
         return $routes;
     }
 }
