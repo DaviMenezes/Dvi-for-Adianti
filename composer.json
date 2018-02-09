@@ -1,6 +1,7 @@
 {
     "require": {
-        "davimenezes/adianti_components":"^1.1.5.6",
+        "dvi/adianti_base": "dev-master",
+        "dvi/adianti_components": "^1.1.6",
         "phpmailer/phpmailer": "^6.0",
         "tburry/pquery": "^1.1",
         "picqer/php-barcode-generator": "^0.2.2",
@@ -11,8 +12,7 @@
     "autoload": {
         "classmap": [
             "app",
-            "vendor/dvi",
-            "vendor/adianti"
+            "vendor/dvi"
         ]
     }
 }
