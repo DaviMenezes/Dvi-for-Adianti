@@ -122,8 +122,6 @@ table.dataTable.no-footer {
     border-bottom: 1px solid #ccc;
 }
 
-
-
 table.tdatagrid_table>tbody.tdatagrid_body>tr>td.tdatagrid_cell.action {
     vertical-align: middle;
     padding: 2px 3px;
