@@ -54,7 +54,7 @@
     padding-right: 0px !important;
     margin-top: 0.5px !important;
 }
-.btn:not(.btn-link):not(.btn-circle) i {
+.dvi .btn:not(.btn-link):not(.btn-circle) i {
     font-size: 2em !important;
 }
 .dvi .tdate-group {
@@ -122,9 +122,7 @@ table.dataTable.no-footer {
     border-bottom: 1px solid #ccc;
 }
 
-.dvi .dvi_btn .btn:not(.btn-link):not(.btn-circle) i {
-    font-size: 2em !important;
-}
+
 
 table.tdatagrid_table>tbody.tdatagrid_body>tr>td.tdatagrid_cell.action {
     vertical-align: middle;
