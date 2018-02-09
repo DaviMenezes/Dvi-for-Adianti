@@ -1,10 +1,10 @@
 <?php
 
-use Adianti\App\Lib\Menu\AdiantiMenuBuilder;
-use Adianti\App\Lib\Util\ApplicationTranslator;
-use Adianti\Control\TPage;
-use Adianti\Core\AdiantiCoreApplication;
-use Adianti\Registry\TSession;
+use Adianti\Base\App\Lib\Menu\AdiantiMenuBuilder;
+use Adianti\Base\App\Lib\Util\ApplicationTranslator;
+use Adianti\Base\Lib\Control\TPage;
+use Adianti\Base\Lib\Core\AdiantiCoreApplication;
+use Adianti\Base\Lib\Registry\TSession;
 use App\Init;
 
 function dd($var)

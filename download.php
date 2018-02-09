@@ -1,6 +1,6 @@
 <?php
 
-use Adianti\Registry\TSession;
+use Adianti\Base\Lib\Registry\TSession;
 
 require_once 'init.php';
 new TSession;

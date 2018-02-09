@@ -4,6 +4,16 @@ namespace Dvi\Adianti;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 
+/**
+ * Control Modules
+ *
+ * @version    Dvi 1.0
+ * @package    DviAdianti
+ * @subpackage Adianti
+ * @author     Davi Menezes
+ * @copyright  Copyright (c) 2017. (davimenezes.dev@gmail.com)
+ * @link https://github.com/DaviMenezes
+ */
 class Modules
 {
     public static function getModules()

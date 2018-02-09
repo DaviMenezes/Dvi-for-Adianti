@@ -6,9 +6,9 @@ namespace App;
 //spl_autoload_register(array('Adianti\Core\AdiantiCoreLoader', 'autoload'));
 //Adianti\Core\AdiantiCoreLoader::loadClassMap();
 
-use Adianti\App\Lib\Util\ApplicationTranslator;
-use Adianti\Core\AdiantiApplicationConfig;
-use Adianti\Core\AdiantiCoreTranslator;
+use Adianti\Base\App\Lib\Util\ApplicationTranslator;
+use Adianti\Base\Lib\Core\AdiantiApplicationConfig;
+use Adianti\Base\Lib\Core\AdiantiCoreTranslator;
 
 class Init
 {

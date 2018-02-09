@@ -1,65 +1,57 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: davi
- * Date: 21/11/17
- * Time: 09:49
- */
-
 namespace Dvi\Adianti;
 
-use Adianti\App\Service\SystemDocumentUploaderService;
-use Adianti\Base\TStandardSeek;
-use Adianti\Modules\Admin\Control\EmptyPage;
-use Adianti\Modules\Admin\Control\LoginForm;
-use Adianti\Modules\Admin\Control\SystemDatabaseExplorer;
-use Adianti\Modules\Admin\Control\SystemDataBrowser;
-use Adianti\Modules\Admin\Control\SystemGroupForm;
-use Adianti\Modules\Admin\Control\SystemGroupList;
-use Adianti\Modules\Admin\Control\SystemPHPErrorLogView;
-use Adianti\Modules\Admin\Control\SystemPHPInfoView;
-use Adianti\Modules\Admin\Control\SystemPreferenceForm;
-use Adianti\Modules\Admin\Control\SystemProgramForm;
-use Adianti\Modules\Admin\Control\SystemProgramList;
-use Adianti\Modules\Admin\Control\SystemSQLPanel;
-use Adianti\Modules\Admin\Control\SystemTableList;
-use Adianti\Modules\Admin\Control\SystemUnitForm;
-use Adianti\Modules\Admin\Control\SystemUnitList;
-use Adianti\Modules\Admin\Control\SystemUserForm;
-use Adianti\Modules\Admin\Control\SystemUserList;
-use Adianti\Modules\Available\Control\PublicView;
-use Adianti\Modules\Common\Control\MessageList;
-use Adianti\Modules\Common\Control\NotificationList;
-use Adianti\Modules\Common\Control\SearchBox;
-use Adianti\Modules\Common\Control\WelcomeView;
-use Adianti\Modules\Communication\Control\SystemDocumentCategoryFormList;
-use Adianti\Modules\Communication\Control\SystemDocumentForm;
-use Adianti\Modules\Communication\Control\SystemDocumentList;
-use Adianti\Modules\Communication\Control\SystemDocumentUploadForm;
-use Adianti\Modules\Communication\Control\SystemMessageForm;
-use Adianti\Modules\Communication\Control\SystemMessageFormView;
-use Adianti\Modules\Communication\Control\SystemMessageList;
-use Adianti\Modules\Communication\Control\SystemSharedDocumentList;
-use Adianti\Modules\Log\Control\SystemAccessLogList;
-use Adianti\Modules\Log\Control\SystemAccessLogStats;
-use Adianti\Modules\Log\Control\SystemChangeLogView;
-use Adianti\Modules\Log\Control\SystemSqlLogList;
-use Adianti\Modules\Log\Model\SystemAccessLog;
-use Adianti\Service\AdiantiMultiSearchService;
-use Adianti\Widget\Dialog\TMessage;
-use Dvi\Module\Contact\Control\ContactAddressForm;
-use Dvi\Module\Contact\Control\HumanForm;
-use Dvi\Module\Office\Project\Control\ProjectFormList;
-use Dvi\Module\Office\Project\Control\ProjectPostForm;
-use Dvi\Module\Office\Project\Control\ProjectPostList;
-use Dvi\Module\Office\Task\Control\TaskForm;
-use Dvi\Module\Office\Task\Control\TaskList;
-use Dvi\Module\Office\Url\Control\UrlForm;
-use Dvi\Module\Office\Url\Control\UrlFormList;
-use Dvi\Module\Office\Workspace\Control\WorkspaceFormList;
-use Dvi\Modules\Officee\Task\Control\TaskWorkForm;
+use Adianti\Base\App\Service\SystemDocumentUploaderService;
+use Adianti\Base\Lib\Base\TStandardSeek;
+use Adianti\Base\Lib\Service\AdiantiMultiSearchService;
+use Adianti\Base\Lib\Widget\Dialog\TMessage;
+use Adianti\Base\Modules\Admin\Control\EmptyPage;
+use Adianti\Base\Modules\Admin\Control\LoginForm;
+use Adianti\Base\Modules\Admin\Control\SystemDatabaseExplorer;
+use Adianti\Base\Modules\Admin\Control\SystemDataBrowser;
+use Adianti\Base\Modules\Admin\Control\SystemGroupForm;
+use Adianti\Base\Modules\Admin\Control\SystemGroupList;
+use Adianti\Base\Modules\Admin\Control\SystemPHPErrorLogView;
+use Adianti\Base\Modules\Admin\Control\SystemPHPInfoView;
+use Adianti\Base\Modules\Admin\Control\SystemPreferenceForm;
+use Adianti\Base\Modules\Admin\Control\SystemProgramForm;
+use Adianti\Base\Modules\Admin\Control\SystemProgramList;
+use Adianti\Base\Modules\Admin\Control\SystemSQLPanel;
+use Adianti\Base\Modules\Admin\Control\SystemTableList;
+use Adianti\Base\Modules\Admin\Control\SystemUnitForm;
+use Adianti\Base\Modules\Admin\Control\SystemUnitList;
+use Adianti\Base\Modules\Admin\Control\SystemUserForm;
+use Adianti\Base\Modules\Admin\Control\SystemUserList;
+use Adianti\Base\Modules\Available\Control\PublicView;
+use Adianti\Base\Modules\Common\Control\MessageList;
+use Adianti\Base\Modules\Common\Control\NotificationList;
+use Adianti\Base\Modules\Common\Control\SearchBox;
+use Adianti\Base\Modules\Common\Control\WelcomeView;
+use Adianti\Base\Modules\Communication\Control\SystemDocumentCategoryFormList;
+use Adianti\Base\Modules\Communication\Control\SystemDocumentForm;
+use Adianti\Base\Modules\Communication\Control\SystemDocumentList;
+use Adianti\Base\Modules\Communication\Control\SystemDocumentUploadForm;
+use Adianti\Base\Modules\Communication\Control\SystemMessageForm;
+use Adianti\Base\Modules\Communication\Control\SystemMessageFormView;
+use Adianti\Base\Modules\Communication\Control\SystemMessageList;
+use Adianti\Base\Modules\Communication\Control\SystemSharedDocumentList;
+use Adianti\Base\Modules\Log\Control\SystemAccessLogList;
+use Adianti\Base\Modules\Log\Control\SystemAccessLogStats;
+use Adianti\Base\Modules\Log\Control\SystemChangeLogView;
+use Adianti\Base\Modules\Log\Control\SystemSqlLogList;
+use Adianti\Base\Modules\Log\Model\SystemAccessLog;
 use Exception;
 
+/**
+ * Control Routes
+ *
+ * @version    Dvi 1.0
+ * @package    DviAdianti
+ * @subpackage Adianti
+ * @author     Davi Menezes
+ * @copyright  Copyright (c) 2017. (davimenezes.dev@gmail.com)
+ * @link https://github.com/DaviMenezes
+ */
 class Route
 {
     /**

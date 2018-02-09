@@ -1,7 +1,8 @@
 <?php
 
-use Adianti\App\Lib\Util\ApplicationTranslator;
-use Adianti\Core\TApplication;
+
+use Adianti\Base\App\Lib\Util\ApplicationTranslator;
+use Adianti\Base\Lib\Core\TApplication;
 use App\Init;
 
 require_once 'init.php';
