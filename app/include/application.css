@@ -85,7 +85,7 @@
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
     /*width: 70%;*/
 }
-.dvi select, .dvi .select2-selection, .dvi input[type="text"], .dvi input[type="password"], .dvi input[type="datetime"], .dvi input[type="datetime-local"], .dvi input[type="date"], .dvi input[type="month"], .dvi input[type="time"], .dvi input[type="week"], .dvi input[type="number"], .dvi input[type="email"], .dvi input[type="url"], .dvi input[type="search"], .dvi input[type="tel"], .dvi input[type="color"], .dvi .uneditable-input, .dvi .ui-spinner  {
+dvi select, .dvi .select2, .dvi .select2-selection, .dvi input[type="text"], .dvi input[type="password"], .dvi input[type="datetime"], .dvi input[type="datetime-local"], .dvi input[type="date"], .dvi input[type="month"], .dvi input[type="time"], .dvi input[type="week"], .dvi input[type="number"], .dvi input[type="email"], .dvi input[type="url"], .dvi input[type="search"], .dvi input[type="tel"], .dvi input[type="color"], .dvi .uneditable-input, .dvi .ui-spinner  {
     height: 36px !important;
     width: 100% !important;
 }
