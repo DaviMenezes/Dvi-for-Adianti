@@ -131,6 +131,7 @@ class Route
         $routes['SystemMessageForm'] = SystemMessageForm::class;
         $routes['SystemDocumentUploaderService'] = SystemDocumentUploaderService::class;
         $routes['AdiantiMultiSearchService'] = AdiantiMultiSearchService::class;
+        $routes['SystemSupportForm'] = SystemSupportForm::class;
         $routes['PublicView'] = PublicView::class;
 
         return $routes;
