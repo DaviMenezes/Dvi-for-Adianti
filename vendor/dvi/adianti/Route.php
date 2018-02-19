@@ -92,7 +92,7 @@ class Route
         return $class_name;
     }
 
-    private static function getRoutes()
+    public static function getRoutes()
     {
         $routes['EmptyPage'] = EmptyPage::class;
         $routes['LoginForm'] = LoginForm::class;
