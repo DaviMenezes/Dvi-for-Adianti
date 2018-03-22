@@ -1,12 +1,8 @@
 <?php
-
-
 use Adianti\Base\App\Lib\Util\ApplicationTranslator;
 use Adianti\Base\Lib\Core\TApplication;
-use App\Init;
 
 require_once 'init.php';
-new Init();
 
 function _t($msg, $param1 = null, $param2 = null, $param3 = null)
 {
@@ -14,3 +10,4 @@ function _t($msg, $param1 = null, $param2 = null, $param3 = null)
 }
 
 TApplication::run(true);
+

@@ -1,11 +1,11 @@
 <?php
+namespace App;
 
 use Adianti\Base\App\Lib\Menu\AdiantiMenuBuilder;
 use Adianti\Base\App\Lib\Util\ApplicationTranslator;
 use Adianti\Base\Lib\Control\TPage;
 use Adianti\Base\Lib\Core\AdiantiCoreApplication;
 use Adianti\Base\Lib\Registry\TSession;
-use App\Init;
 
 function dd($var)
 {
@@ -13,9 +13,7 @@ function dd($var)
     die();
 }
 
-require_once 'init.php';
-$init = new Init();
-$ini = $init->getIni();
+$ini = require_once 'init.php';
 
 $theme  = $ini['general']['theme'];
 $class  = isset($_REQUEST['class']) ? $_REQUEST['class'] : '';

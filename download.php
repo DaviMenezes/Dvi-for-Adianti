@@ -1,13 +1,15 @@
 <?php
-
 use Adianti\Base\Lib\Registry\TSession;
 
 require_once 'init.php';
-new TSession;
+new TSession();
 
 if (isset($_GET['file']) and TSession::getValue('logged')) {
     $file      = $_GET['file'];
     $info      = pathinfo($file);
+    if (empty($info['extension'])) {
+        die();
+    }
     $extension = $info['extension'];
     
     $content_type_list = array();
