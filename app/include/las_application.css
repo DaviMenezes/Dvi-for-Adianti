@@ -51,17 +51,19 @@
 table.tdatagrid_table>tbody.tdatagrid_body>tr>td.tdatagrid_cell {
     border-bottom: unset;
 }
-.panel_grid_occurrence .panel-body {
+/*PANEL GRID LIST*********************************************************/
+.panel_grid_list .panel-body {
     padding: unset;
 }
-.panel_grid_occurrence .panel-body table.tdatagrid_table {
+.panel_grid_list .panel-body table.tdatagrid_table {
     border: unset;
 }
 
-.panel_grid_occurrence table.tdatagrid_table>tbody.tdatagrid_body>tr>td.tdatagrid_cell.action {
+.panel_grid_list table.tdatagrid_table>tbody.tdatagrid_body>tr>td.tdatagrid_cell.action {
     border-left: unset;
 }
 
-.panel_grid_occurrence .panel-heading {
+.panel_grid_list .panel-heading {
     height: unset !important;
 }
+/**************************************************************************/
