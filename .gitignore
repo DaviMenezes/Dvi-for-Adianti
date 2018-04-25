@@ -2,28 +2,6 @@
 
 app/database/permission\.db
 
-vendor/composer/
-
-composer\.lock
-
-vendor/bacon/
-
-vendor/davimenezes/
-
-vendor/dompdf/
-
-vendor/phenx/
-
-vendor/phpmailer/
-
-vendor/phprtflite/
-
-vendor/picqer/
-
-vendor/sabberworm/
-
-vendor/tburry/
-
 \.php_cs\.cache
 
 
@@ -31,7 +9,7 @@ vendor/tburry/
 
 ### Composer ###
 composer.phar
-/vendor/
+vendor/
 
 # Commit your application's lock file http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file
 # You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
