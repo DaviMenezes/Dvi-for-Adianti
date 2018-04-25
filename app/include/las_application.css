@@ -1,0 +1,67 @@
+/*PAGINATION ************************************************************************/
+.tpagenavigation {
+    padding: 0 0px;
+}
+.dpagenavigation .pagination {
+    display: unset;
+}
+.dpagenavigation .pagination .btn {
+    padding: unset;
+}
+.dpagenavigation .pagination .pagination_item a {
+    color: #999;
+}
+
+.dpagenavigation .pagination .btn-primary > a {
+    color: white;
+}
+.dpagenavigation .pagination .pagination_item a i.fa {
+    font-size: 20px !important;
+    margin-top: 4px;
+}
+.dpagenavigation .pagination .pagination_item a div {
+    padding: unset;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+}
+.dpagenavigation .pagination .pagination_item a div span {
+    vertical-align: -webkit-baseline-middle;
+    /*font-weight: bold;*/
+    font-size: small;
+}
+.dpagenavigation .pagination .pagination_item {
+    border: none;
+    border-bottom: solid 1px #dcdcdc;
+    border-left: solid 1px #dcdcdc;
+    height: 35px;
+    border-radius: unset;
+    background-color: #f8f8f8;
+    padding-top: 1.5px;
+}
+.dpagenavigation .pagination .item_left {
+    border-left: solid 1px #DDDDDD;
+}
+.dpagenavigation .pagination .item_right {
+    border-right: solid 1px #DDDDDD;
+}
+.dpagenavigation .pagination .btn-primary {
+    border-color: #3c8cbc;
+    background-color: #3c8cbc;
+}
+table.tdatagrid_table>tbody.tdatagrid_body>tr>td.tdatagrid_cell {
+    border-bottom: unset;
+}
+.panel_grid_occurrence .panel-body {
+    padding: unset;
+}
+.panel_grid_occurrence .panel-body table.tdatagrid_table {
+    border: unset;
+}
+
+.panel_grid_occurrence table.tdatagrid_table>tbody.tdatagrid_body>tr>td.tdatagrid_cell.action {
+    border-left: unset;
+}
+
+.panel_grid_occurrence .panel-heading {
+    height: unset !important;
+}
