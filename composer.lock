@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1d7c54676f5e51570422bd06e1b202b9",
-    "content-hash": "638242a9775f9fc68bfe8ad505452160",
+    "hash": "898f81b66036ae274624c392ccf5d6f7",
+    "content-hash": "3953eb7e8a2b792361a69bdac2b61e7b",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -150,16 +150,16 @@
         },
         {
             "name": "dvi/adianti_components",
-            "version": "1.2.7",
+            "version": "1.2.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/DaviMenezes/adianti_components.git",
-                "reference": "c911f31a60b2a997eb106d6bddcddd7bd1e8561d"
+                "reference": "c40373e78d8c1e7615131e95f1e1bbace1f5232b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/DaviMenezes/adianti_components/zipball/c911f31a60b2a997eb106d6bddcddd7bd1e8561d",
-                "reference": "c911f31a60b2a997eb106d6bddcddd7bd1e8561d",
+                "url": "https://api.github.com/repos/DaviMenezes/adianti_components/zipball/c40373e78d8c1e7615131e95f1e1bbace1f5232b",
+                "reference": "c40373e78d8c1e7615131e95f1e1bbace1f5232b",
                 "shasum": ""
             },
             "type": "library",
@@ -179,7 +179,7 @@
                 }
             ],
             "description": "Components for Adianti Framework",
-            "time": "2018-04-25 20:26:56"
+            "time": "2018-04-26 21:18:36"
         },
         {
             "name": "dvi/adianti_extensions",
