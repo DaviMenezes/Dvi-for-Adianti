@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Servidor:                     127.0.0.1
--- Versão do servidor:           5.7.20-0ubuntu0.17.04.1 - (Ubuntu)
+-- Versão do servidor:           5.7.22-0ubuntu0.16.04.1 - (Ubuntu)
 -- OS do Servidor:               Linux
--- HeidiSQL Versão:              9.5.0.5196
+-- HeidiSQL Versão:              9.5.0.5278
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -11,39 +11,42 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- Copiando estrutura para tabela dvi.ctt_entity
-DROP TABLE IF EXISTS `ctt_entity`;
-CREATE TABLE IF NOT EXISTS `ctt_entity` (
+-- Copiando estrutura para tabela dvi.ctt_city
+DROP TABLE IF EXISTS `ctt_city`;
+CREATE TABLE IF NOT EXISTS `ctt_city` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Copiando dados para a tabela dvi.ctt_entity: ~1 rows (aproximadamente)
-/*!40000 ALTER TABLE `ctt_entity` DISABLE KEYS */;
-INSERT INTO `ctt_entity` (`id`, `name`) VALUES
-	(1, 'Davi Menezess');
-/*!40000 ALTER TABLE `ctt_entity` ENABLE KEYS */;
+-- Copiando dados para a tabela dvi.ctt_city: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `ctt_city` DISABLE KEYS */;
+INSERT INTO `ctt_city` (`id`, `name`) VALUES
+	(1, 'São Paulo');
+/*!40000 ALTER TABLE `ctt_city` ENABLE KEYS */;
 
--- Copiando estrutura para tabela dvi.ctt_entity_human
-DROP TABLE IF EXISTS `ctt_entity_human`;
-CREATE TABLE IF NOT EXISTS `ctt_entity_human` (
+-- Copiando estrutura para tabela dvi.ctt_contact
+DROP TABLE IF EXISTS `ctt_contact`;
+CREATE TABLE IF NOT EXISTS `ctt_contact` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `cpf` varchar(14) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cpf` varchar(14) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `rg` varchar(12) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `birthday` date DEFAULT NULL,
-  `entity_id` int(10) unsigned DEFAULT NULL,
+  `observation` text COLLATE utf8mb4_unicode_ci,
+  `city_id` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `cpf` (`cpf`),
-  KEY `FK_ctt_entity_human_ctt_entity` (`entity_id`),
-  CONSTRAINT `FK_ctt_entity_human_ctt_entity` FOREIGN KEY (`entity_id`) REFERENCES `ctt_entity` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  KEY `FK_ctt_contact_ctt_city` (`city_id`),
+  KEY `name` (`name`),
+  CONSTRAINT `FK_ctt_contact_ctt_city` FOREIGN KEY (`city_id`) REFERENCES `ctt_city` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Copiando dados para a tabela dvi.ctt_entity_human: ~1 rows (aproximadamente)
-/*!40000 ALTER TABLE `ctt_entity_human` DISABLE KEYS */;
-INSERT INTO `ctt_entity_human` (`id`, `cpf`, `rg`, `birthday`, `entity_id`) VALUES
-	(1, '572.153.298-01', NULL, '2018-01-17', 1);
-/*!40000 ALTER TABLE `ctt_entity_human` ENABLE KEYS */;
+-- Copiando dados para a tabela dvi.ctt_contact: ~1 rows (aproximadamente)
+/*!40000 ALTER TABLE `ctt_contact` DISABLE KEYS */;
+INSERT INTO `ctt_contact` (`id`, `name`, `cpf`, `rg`, `birthday`, `observation`, `city_id`) VALUES
+	(1, 'Davi Menezes', NULL, NULL, NULL, 'Telegram: @davimenezes\r\nGithub: https://github.com/DaviMenezes', 1);
+/*!40000 ALTER TABLE `ctt_contact` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela dvi.sys_document
 DROP TABLE IF EXISTS `sys_document`;
@@ -77,8 +80,6 @@ CREATE TABLE IF NOT EXISTS `sys_document_category` (
 
 -- Copiando dados para a tabela dvi.sys_document_category: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `sys_document_category` DISABLE KEYS */;
-INSERT INTO `sys_document_category` (`id`, `name`) VALUES
-	(1, 'Documentação');
 /*!40000 ALTER TABLE `sys_document_category` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela dvi.sys_document_group
@@ -141,9 +142,9 @@ CREATE TABLE IF NOT EXISTS `sys_group_program` (
   KEY `FK_sys_group_program_sys_program` (`system_program_id`),
   CONSTRAINT `FK_sys_group_program_sys_group` FOREIGN KEY (`system_group_id`) REFERENCES `sys_group` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_sys_group_program_sys_program` FOREIGN KEY (`system_program_id`) REFERENCES `sys_program` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela dvi.sys_group_program: ~34 rows (aproximadamente)
+-- Copiando dados para a tabela dvi.sys_group_program: ~36 rows (aproximadamente)
 /*!40000 ALTER TABLE `sys_group_program` DISABLE KEYS */;
 INSERT INTO `sys_group_program` (`id`, `system_group_id`, `system_program_id`) VALUES
 	(1, 1, 1),
@@ -179,7 +180,9 @@ INSERT INTO `sys_group_program` (`id`, `system_group_id`, `system_program_id`) V
 	(44, 2, 24),
 	(45, 2, 25),
 	(46, 2, 30),
-	(47, 2, 35);
+	(49, 2, 37),
+	(50, 2, 38),
+	(51, 2, 39);
 /*!40000 ALTER TABLE `sys_group_program` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela dvi.sys_message
@@ -245,9 +248,9 @@ CREATE TABLE IF NOT EXISTS `sys_program` (
   `name` varchar(100) DEFAULT NULL,
   `controller` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela dvi.sys_program: ~34 rows (aproximadamente)
+-- Copiando dados para a tabela dvi.sys_program: ~37 rows (aproximadamente)
 /*!40000 ALTER TABLE `sys_program` DISABLE KEYS */;
 INSERT INTO `sys_program` (`id`, `name`, `controller`) VALUES
 	(1, 'System Group Form', 'SystemGroupForm'),
@@ -284,7 +287,9 @@ INSERT INTO `sys_program` (`id`, `name`, `controller`) VALUES
 	(32, 'System Database Browser', 'SystemDatabaseExplorer'),
 	(33, 'System Table List', 'SystemTableList'),
 	(34, 'System Data Browser', 'SystemDataBrowser'),
-	(35, 'Cadastro de Contato', 'HumanForm');
+	(37, 'ContatoForm', 'ContatoForm'),
+	(38, 'CityForm', 'CityForm'),
+	(39, 'ContatoList', 'ContatoList');
 /*!40000 ALTER TABLE `sys_program` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela dvi.sys_unit
