@@ -2,6 +2,9 @@
 
 namespace App\Config;
 
+use App\Control\Contato\CityForm;
+use App\Control\Contato\ContatoForm;
+use App\Control\Contato\ContatoList;
 use Dvi\Adianti\Route;
 
 /**
@@ -20,7 +23,9 @@ class MyRoutes extends Route
     {
         $routes = parent::getRoutes();
 
-        //$routes['test'] = 'path/TestClass'; //Test::class;
+        $routes['ContatoForm'] = ContatoForm::class;
+        $routes['ContatoList'] = ContatoList::class;
+        $routes['CityForm'] = CityForm::class;
 
         return $routes;
     }
