@@ -112,11 +112,15 @@
         </menu>
     </menuitem>
 
-    <menuitem label="Formulários">
+    <menuitem label="Exemplos">
         <icon>fa:bars fa-fw</icon>
         <menu>
-            <menuitem label="Form1">
-                <action>HumanForm</action>
+            <menuitem label="Contato">
+                <action>ContatoForm</action>
+                <icon>fa:bars fa-fw</icon>
+            </menuitem>
+            <menuitem label="Cidade">
+                <action>CityForm</action>
                 <icon>fa:bars fa-fw</icon>
             </menuitem>
         </menu>
