@@ -2,6 +2,7 @@
 
 namespace App\Config;
 
+use App\Control\Admin\LoginForm;
 use App\Control\Contato\CityForm;
 use App\Control\Contato\ContatoForm;
 use App\Control\Contato\ContatoList;
@@ -23,6 +24,10 @@ class MyRoutes extends Route
     {
         $routes = parent::getRoutes();
 
+        //ADMIN
+        $routes['LoginForm'] = LoginForm::class;
+
+        //SAMPLES
         $routes['ContatoForm'] = ContatoForm::class;
         $routes['ContatoList'] = ContatoList::class;
         $routes['CityForm'] = CityForm::class;
