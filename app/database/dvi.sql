@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `ctt_contact` (
   KEY `FK_ctt_contact_ctt_city` (`city_id`),
   KEY `name` (`name`),
   CONSTRAINT `FK_ctt_contact_ctt_city` FOREIGN KEY (`city_id`) REFERENCES `ctt_city` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Copiando dados para a tabela dvi.ctt_contact: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `ctt_contact` DISABLE KEYS */;
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `sys_document_category` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Copiando dados para a tabela dvi.sys_document_category: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `sys_document_category` DISABLE KEYS */;
@@ -144,7 +144,7 @@ CREATE TABLE IF NOT EXISTS `sys_group_program` (
   CONSTRAINT `FK_sys_group_program_sys_program` FOREIGN KEY (`system_program_id`) REFERENCES `sys_program` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela dvi.sys_group_program: ~36 rows (aproximadamente)
+-- Copiando dados para a tabela dvi.sys_group_program: ~38 rows (aproximadamente)
 /*!40000 ALTER TABLE `sys_group_program` DISABLE KEYS */;
 INSERT INTO `sys_group_program` (`id`, `system_group_id`, `system_program_id`) VALUES
 	(1, 1, 1),
@@ -325,8 +325,8 @@ CREATE TABLE IF NOT EXISTS `sys_user` (
 -- Copiando dados para a tabela dvi.sys_user: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `sys_user` DISABLE KEYS */;
 INSERT INTO `sys_user` (`id`, `name`, `login`, `password`, `email`, `frontpage_id`, `system_unit_id`, `active`) VALUES
-	(1, 'Admin', 'admin', '202cb962ac59075b964b07152d234b70', 'admin@test.com', NULL, NULL, 'Y'),
-	(2, 'User', 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'user@user.net', 7, NULL, 'Y');
+	(1, 'Admin', 'admin', '$2y$10$V.oRRHwc.57BiHKOQ0GpSuRgqCUTh5aGx839zC8bVwP1TLOz4AjoW', 'davimenezes.dev@gmail.com', NULL, NULL, 'Y'),
+	(2, 'User', 'user', '$2y$10$InHz5RuJhPzb4JHTbTMMA.hcAdSsxsDY9HS7TUgf5FbAOUPTsEHuK', 'user@user.net', 7, NULL, 'Y');
 /*!40000 ALTER TABLE `sys_user` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela dvi.sys_user_group
