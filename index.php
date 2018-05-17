@@ -36,6 +36,7 @@ if (TSession::getValue('logged')) {
 $content = str_replace('{IF-BUILDER}', '<!--', $content);
 $content = str_replace('{/IF-BUILDER}', '-->', $content);
 $content  = ApplicationTranslator::translateTemplate($content);
+$content  = str_replace('{LANGUAGE}', LANG, $content);
 $content  = str_replace('{APPNAME}', APPLICATION_NAME, $content);
 $content  = str_replace('{LIBRARIES}', file_get_contents("app/templates/{$theme}/libraries.html"), $content);
 $content  = str_replace('{class}', $class, $content);
