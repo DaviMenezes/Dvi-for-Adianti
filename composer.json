@@ -2,7 +2,7 @@
     "require": {
         "dvi/adianti_base": "1.1.2",
         "dvi/adianti_extensions": "1.2.2",
-        "dvi/adianti_components": "1.3.5",
+        "dvi/adianti_components": "1.3.7",
         "phpmailer/phpmailer": "^6.0",
         "tburry/pquery": "^1.1",
         "picqer/php-barcode-generator": "^0.2.2",
