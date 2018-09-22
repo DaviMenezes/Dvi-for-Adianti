@@ -2,10 +2,7 @@
 
 namespace App\Config;
 
-use App\Control\Admin\LoginForm;
-use App\Control\Contato\CityForm;
-use App\Control\Contato\ContatoForm;
-use App\Control\Contato\ContatoList;
+use Adianti\Base\Modules\Admin\Control\LoginForm;
 use Dvi\Adianti\Route;
 
 /**
@@ -28,9 +25,6 @@ class MyRoutes extends Route
         $routes['LoginForm'] = LoginForm::class;
 
         //SAMPLES
-        $routes['ContatoForm'] = ContatoForm::class;
-        $routes['ContatoList'] = ContatoList::class;
-        $routes['CityForm'] = CityForm::class;
 
         return $routes;
     }

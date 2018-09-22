@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{LANGUAGE}">
+<html lang="pt-BR">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,24 +43,29 @@
     <body>
         <nav class="main-header navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0; text-align:center">
             <div class="navbar-header" style="display: inline-block;float:none">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" style="color:black" href="http://www.adianti.com.br/framework">{APPNAME}</a>
+                <a class="navbar-brand" style="color:black" href="https://github.com/DaviMenezes/Dvi-for-Adianti">{APPNAME}</a>
             </div>
             <!-- /.navbar-header -->
         </nav>
         
-        <div id="wrapper">
+        <div id="wrapper" style="width:90%;margin:auto;margin-top:10px">
             <div id="adianti_div_content"></div>
             <div id="adianti_online_content"></div>
             <div id="adianti_online_content2"></div>
             
         </div>
-        <div style="text-align:center"><a href="index.php?class=PublicView">[public view]</a></div>
+        <div style="text-align:center">
+            <div class="btn-group" role="group" aria-label="...">
+                <a href="index.php?class=LoginForm" generator="adianti" type="button" class="btn btn-default">Login</a>
+                <a href="index.php?class=SystemRegistrationForm" generator="adianti" type="button" class="btn btn-default">_t{Create account}</a>
+                <a href="index.php?class=SystemRequestPasswordResetForm" generator="adianti" type="button" class="btn btn-default">_t{Reset password}</a>
+            </div>
+        </div>
+        
+        <a class="little-float-button bg-yellow" title="PHP Modules" href="index.php?class=SystemModulesCheckView" style="pointer-events: auto;">
+            <i class="fa fa-cog internal-float-button"></i>
+        </a>
+        
         <!-- /#wrapper -->
     </body>
 </html>

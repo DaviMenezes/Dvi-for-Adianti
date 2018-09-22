@@ -30,6 +30,10 @@
                   <icon>fa:info-circle fa-fw</icon>
                   <action>SystemPHPInfoView</action>
               </menuitem>
+              <menuitem label='PHP Modules'>
+                  <icon>fa:info-circle fa-fw</icon>
+                  <action>SystemModulesCheckView</action>
+              </menuitem>
               <menuitem label='_t{Preferences}'>
                   <icon>fa:cog fa-fw</icon>
                   <action>SystemPreferenceForm#method=onEdit</action>
@@ -101,7 +105,7 @@
             </menuitem>
         </menu>
     </menuitem>
-    
+
     <menuitem label='Logout'>
         <icon>fa:sign-out fa-fw</icon>
         <menu>
@@ -109,20 +113,6 @@
                   <action>LoginForm#method=onLogout#static=1</action>
                   <icon>fa:sign-out fa-fw</icon>
               </menuitem>
-        </menu>
-    </menuitem>
-
-    <menuitem label="Exemplos">
-        <icon>fa:bars fa-fw</icon>
-        <menu>
-            <menuitem label="Contato">
-                <action>ContatoForm</action>
-                <icon>fa:bars fa-fw</icon>
-            </menuitem>
-            <menuitem label="Cidade">
-                <action>CityForm</action>
-                <icon>fa:bars fa-fw</icon>
-            </menuitem>
         </menu>
     </menuitem>
 </menu>

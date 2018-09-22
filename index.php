@@ -1,61 +1,10 @@
 <?php
-namespace App;
 
-use Adianti\Base\App\Lib\Menu\AdiantiMenuBuilder;
-use Adianti\Base\App\Lib\Util\ApplicationTranslator;
-use Adianti\Base\Lib\Control\TPage;
-use Adianti\Base\Lib\Core\AdiantiCoreApplication;
-use Adianti\Base\Lib\Registry\TSession;
+use App\Templates\ThemeLoader;
 
-function dd($var)
-{
-    var_dump($var);
-    die();
-}
+require_once 'init.php';
 
-$ini = require_once 'init.php';
+$themeLayout = new ThemeLoader($ini);
+$themeLayout->appName(APPLICATION_NAME);
 
-$theme  = $ini['general']['theme'];
-$class  = isset($_REQUEST['class']) ? $_REQUEST['class'] : '';
-$public = in_array($class, $ini['permission']['public_classes']);
-new TSession;
-
-if (TSession::getValue('logged')) {
-    $content     = file_get_contents("app/templates/{$theme}/layout.html");
-    $menu_string = AdiantiMenuBuilder::parse('menu.xml', $theme);
-    $content     = str_replace('{MENU}', $menu_string, $content);
-    
-    if ((TSession::getValue('login') == 'admin') && isset($ini['general']['token'])) {
-        $content = str_replace('{IF-BUILDER}', '', $content);
-        $content = str_replace('{/IF-BUILDER}', '', $content);
-    }
-} else {
-    $content = file_get_contents("app/templates/{$theme}/login.html");
-}
-
-$content = str_replace('{IF-BUILDER}', '<!--', $content);
-$content = str_replace('{/IF-BUILDER}', '-->', $content);
-$content  = ApplicationTranslator::translateTemplate($content);
-$content  = str_replace('{LANGUAGE}', LANG, $content);
-$content  = str_replace('{APPNAME}', APPLICATION_NAME, $content);
-$content  = str_replace('{LIBRARIES}', file_get_contents("app/templates/{$theme}/libraries.html"), $content);
-$content  = str_replace('{class}', $class, $content);
-$content  = str_replace('{template}', $theme, $content);
-$content  = str_replace('{username}', TSession::getValue('username'), $content);
-$content  = str_replace('{usermail}', TSession::getValue('usermail'), $content);
-$content  = str_replace('{frontpage}', TSession::getValue('frontpage'), $content);
-$content  = str_replace('{query_string}', $_SERVER["QUERY_STRING"], $content);
-$css      = TPage::getLoadedCSS();
-$js       = TPage::getLoadedJS();
-$content  = str_replace('{HEAD}', $css.$js, $content);
-
-echo $content;
-
-if (TSession::getValue('logged') or $public) {
-    if ($class) {
-        $method = isset($_REQUEST['method']) ? $_REQUEST['method'] : null;
-        AdiantiCoreApplication::loadPage($class, $method, $_REQUEST);
-    }
-} else {
-    AdiantiCoreApplication::loadPage('LoginForm', '', $_REQUEST);
-}
+$themeLayout->load();

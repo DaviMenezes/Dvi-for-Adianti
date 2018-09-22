@@ -28,7 +28,8 @@ table tr td
 
 .btn-group > .btn, .btn-group > .dropdown-menu, .btn-group > .popover
 {
-    font-size: 12px;
+    /*Todo Dvi - remove and minify after tests*/
+    /*font-size: 12px;*/
 }
 
 .ui-widget
@@ -149,7 +150,7 @@ table tr td
     z-index: 4000 !important;
 }
 
-.datepicker { /* pq abre dentro de dialogs */
+.datepicker, .datetimepicker { /* pq abre dentro de dialogs */
     z-index: 1000000000000; /* mesmo zindex que tooltip */
 }
 

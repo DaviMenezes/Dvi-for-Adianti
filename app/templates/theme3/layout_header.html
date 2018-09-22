@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{APPNAME}</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    {LIBRARIES}
+    {HEAD}
+    <script>
+        /*function update_messages_menu() {
+            $.get('engine.php?class=MessageList&theme=theme3', function(data) {
+                $('#envelope_messages').html(data);
+            });
+        }
+
+        function update_notifications_menu() {
+            $.get('engine.php?class=NotificationList&theme=theme3', function(data) {
+                $('#envelope_notifications').html(data);
+            });
+        }
+
+        $(function() {
+            $.get('engine.php?class=SearchBox', function(data)
+            {
+                $('.navbar-custom-menu').append(data).show();
+                var search_box = $('.navbar-nav').nextAll('div');
+                search_box.css('padding-top', '10px');
+                search_box.css('padding-left', '25px');
+                search_box.css('display', 'table');
+                search_box.css('float', 'left');
+                search_box.attr('id', 'search-box');
+            });
+
+            update_messages_menu();
+            update_notifications_menu();
+
+            // setInterval( update_messages_menu, 5000);
+            // setInterval( update_notifications_menu, 5000);
+        });*/
+    </script>
+    <link rel="stylesheet" href="app/templates/{template}/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="app/templates/{template}/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="app/include/application.css">
+    <!--<link rel="stylesheet" href="app/include/last_application.css">-->
+</head>

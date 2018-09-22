@@ -1,7 +1,7 @@
 :root {
-    --width100perc: 100%;
-    --min-height-default: 36px;
-}
+     --width100perc: 100%;
+     --min-height-default: 36px;
+ }
 @media only screen and (min-width: 320px){
 
     .without_padding_right { padding-right: 0px; }
@@ -50,13 +50,7 @@
     min-height: var(--min-height-default);
 }
 .dvi .label_right{ width: 100%; text-align: right; }
-.dvi_btn i {
-    padding-right: 0px !important;
-    margin-top: 0.5px !important;
-}
-.dvi .btn:not(.btn-link):not(.btn-circle) span i {
-    font-size: 2em !important;
-}
+
 .dvi .tdate-group {
     width: 100%;
 }
@@ -72,12 +66,7 @@
     margin: 3px 4px;
     font-weight: 700;
 }
-
-.dvi .btn-group label {
-    min-height: var(--min-height-default);
-    padding-top: 9px;
-}
-.dvi .btn-group .active {
+.dvi .dvi_radio_info .btn-group .active {
     color: #fff;
     background-color: #31b0d5;
     border-color: #269abc;
@@ -90,9 +79,12 @@
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
     /*width: 70%;*/
 }
-dvi select, .dvi .select2, .dvi .select2-selection, .dvi input[type="text"], .dvi input[type="password"], .dvi input[type="datetime"], .dvi input[type="datetime-local"], .dvi input[type="date"], .dvi input[type="month"], .dvi input[type="time"], .dvi input[type="week"], .dvi input[type="number"], .dvi input[type="email"], .dvi input[type="url"], .dvi input[type="search"], .dvi input[type="tel"], .dvi input[type="color"], .dvi .uneditable-input, .dvi .ui-spinner  {
+.dvi select, .dvi .select2, .dvi input[type="text"], .dvi input[type="password"], .dvi input[type="datetime"], .dvi input[type="datetime-local"], .dvi input[type="date"], .dvi input[type="month"], .dvi input[type="time"], .dvi input[type="week"], .dvi input[type="number"], .dvi input[type="email"], .dvi input[type="url"], .dvi input[type="search"], .dvi input[type="tel"], .dvi input[type="color"], .dvi .uneditable-input, .dvi .ui-spinner  {
     height: 36px !important;
     width: 100% !important;
+}
+.dvi .select2 span {
+    height: 36px !important;
 }
 .dvi textarea {
     width: 100% !important;
@@ -108,23 +100,25 @@ dvi select, .dvi .select2, .dvi .select2-selection, .dvi input[type="text"], .dv
     width:20%
 }
 
+.dvi label {
+    margin: 5px 0px;
+}
+
 .dvi .tab-pane {
     padding: 10px 2px;
 }
 
 .dvi .dvi_panel_action {
-    height: 39px;
+    height: 40px;
 }
+
 .dvi .dvi_btn_label {
-    float: right; margin: 4px 0 0 4px
+    float: left; margin: 5.5px 0 0 4px;
+    font-size: 14px;
 }
 
 table.dataTable.no-footer {
     border-bottom: 1px solid #ccc;
-}
-
-.dvi .dvi_btn .btn:not(.btn-link):not(.btn-circle) i {
-    font-size: 2em !important;
 }
 
 table.tdatagrid_table>tbody.tdatagrid_body>tr>td.tdatagrid_cell.action {
@@ -133,5 +127,25 @@ table.tdatagrid_table>tbody.tdatagrid_body>tr>td.tdatagrid_cell.action {
 }
 
 table.tdatagrid_table>tbody.tdatagrid_body>tr>td.tdatagrid_cell.action button.btn {
-    height: 22px;
+    height: 32px;
+    font-size: 14px;
+}
+
+.dvi_str_danger {
+    color: #d9534f;
+}
+.dvi_str_warning {
+    color: #f0ad4e;
+}
+.dvi_str_info {
+    color: #5bc0de;
+}
+.dvi_str_success {
+    color: #5cb85c;
+}
+.dvi_str_primary {
+    color: #337ab7;
+}
+.dvi_str_success {
+    color: #5cb85c;
 }
