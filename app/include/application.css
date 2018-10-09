@@ -39,8 +39,6 @@
 .width100perc { width: 100%; }
 .width120 { min-width: 120px; }
 
-/*.dvi .tseekbutton .tfield .select2-container .select2-choice .dvi_btn,button { min-height: 36px !important; }
-.dvi .select2-container .select2-choice { min-height: 36px !important; }*/
 .dvi .tseekbutton, .dvi .tseekentry, .dvi .select2-container, .dvi .select2-choice
 {
     min-height: var(--min-height-default) !important;
@@ -76,15 +74,10 @@
     padding-left: 5px;
     padding-right: 5px;
 }
-select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
-    /*width: 70%;*/
-}
-.dvi select, .dvi .select2, .dvi input[type="text"], .dvi input[type="password"], .dvi input[type="datetime"], .dvi input[type="datetime-local"], .dvi input[type="date"], .dvi input[type="month"], .dvi input[type="time"], .dvi input[type="week"], .dvi input[type="number"], .dvi input[type="email"], .dvi input[type="url"], .dvi input[type="search"], .dvi input[type="tel"], .dvi input[type="color"], .dvi .uneditable-input, .dvi .ui-spinner  {
-    height: 36px !important;
-    width: 100% !important;
-}
-.dvi .select2 span {
-    height: 36px !important;
+
+.dvi select, .dvi .select2, .dvi input[type="text"], .dvi input[type="password"], .dvi input[type="datetime"], .dvi input[type="datetime-local"], .dvi input[type="date"], .dvi input[type="month"], .dvi input[type="time"], .dvi input[type="week"], .dvi input[type="number"], .dvi input[type="email"], .dvi input[type="url"], .dvi input[type="search"], .dvi input[type="tel"], .dvi input[type="color"], .dvi .uneditable-input, .dvi .ui-spinner, .dvi_grid_col .input-group.color-div.colorpicker-component.colorpicker-element {
+    min-height: 36px !important;
+    min-width: 100% !important;
 }
 .dvi textarea {
     width: 100% !important;
@@ -145,7 +138,4 @@ table.tdatagrid_table>tbody.tdatagrid_body>tr>td.tdatagrid_cell.action button.bt
 }
 .dvi_str_primary {
     color: #337ab7;
-}
-.dvi_str_success {
-    color: #5cb85c;
 }
