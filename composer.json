@@ -6,7 +6,7 @@
     "require": {
         "dvi/adianti_base": "1.2.3",
         "dvi/adianti_extensions": "1.2.4",
-        "dvi/adianti_components": "1.5.6",
+        "dvi/adianti_components": "1.5.7",
         "filp/whoops": "^2.2",
         "jasonlam604/stringizer": "^2.14.0",
         "phpmailer/phpmailer": "^6.0",
