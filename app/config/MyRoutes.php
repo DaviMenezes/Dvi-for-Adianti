@@ -3,12 +3,10 @@
 namespace App\Config;
 
 use Adianti\Base\Modules\Admin\Control\LoginForm;
-use Dvi\Adianti\Route;
+use Dvi\AdiantiExtension\Route;
 
 /**
  * Config MyRoutes
- *
- * @version    Dvi 1.0
  * @package    Config
  * @subpackage App
  * @author     Davi Menezes
@@ -23,8 +21,6 @@ class MyRoutes extends Route
 
         //ADMIN
         $routes['LoginForm'] = LoginForm::class;
-
-        //SAMPLES
 
         return $routes;
     }
