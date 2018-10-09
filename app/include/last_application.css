@@ -124,9 +124,6 @@
 .dpagenavigation .pagination .item_left {
     border-left: solid 1px #DDDDDD;
 }
-/*.dpagenavigation .pagination .item_right {*/
-    /*border-right: solid 1px #DDDDDD;*/
-/*}*/
 .dpagenavigation .pagination .btn-primary {
     border-color: #3c8cbc;
     background-color: #3c8cbc;
@@ -175,6 +172,7 @@ table.tdatagrid_table>tbody.tdatagrid_body>tr>td.tdatagrid_cell {
 	border-top: none !important;
 	border-right: none !important;
     box-shadow: none ;
+    height: 36px;
 }
 
 /*FORM VALIDATION*/
@@ -211,3 +209,5 @@ table.tdatagrid_table>tbody.tdatagrid_body>tr>td.tdatagrid_cell {
 .sidebar-mini.sidebar-collapse .sidebar-menu>li:hover>a>span:not(.pull-right), .sidebar-mini.sidebar-collapse .sidebar-menu>li:hover>.treeview-menu {
     min-width: 250px;
 }
+
+.dvi .dvi_field_required:required::placeholder { color: #d9534f; }

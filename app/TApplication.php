@@ -7,8 +7,8 @@ use Adianti\Base\Lib\Core\AdiantiApplicationConfig;
 use Adianti\Base\Lib\Core\AdiantiCoreApplication;
 use Adianti\Base\Lib\Registry\TSession;
 use Adianti\Base\Lib\Widget\Dialog\TMessage;
-use App\Control\Admin\LoginForm;
-use Dvi\Adianti\Route;
+use Adianti\Base\Modules\Admin\Control\LoginForm;
+use Dvi\AdiantiExtension\Route;
 
 /**
  *  TApplication

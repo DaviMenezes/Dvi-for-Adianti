@@ -8,11 +8,10 @@ use Adianti\Base\Lib\Control\TPage;
 use Adianti\Base\Lib\Core\AdiantiApplicationConfig;
 use Adianti\Base\Lib\Core\AdiantiCoreApplication;
 use Adianti\Base\Lib\Registry\TSession;
-use Adianti\Base\Lib\Widget\Dialog\TMessage;
-use App\Control\Admin\LoginForm;
+use Adianti\Base\Modules\Admin\Control\LoginForm;
 use App\TApplication;
 use Dvi\Adianti\Control\DviControl;
-use Dvi\Adianti\Route;
+use Dvi\AdiantiExtension\Route;
 use Exception;
 
 /**
